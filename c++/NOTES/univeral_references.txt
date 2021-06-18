@@ -1,0 +1,6 @@
+Universal references (T&&) are only applicable to
+
+** template functions **
+
+-- NOT template classes -- AND
+-- NOT non-template functions and classes

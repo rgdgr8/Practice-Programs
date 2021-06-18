@@ -1,0 +1,25 @@
+When we do ptr=malloc(...), we assign some memory for our program and the pointer points to that memory!
+And NOT that we store that memory in the pointer or something like that.
+
+We cannot use free without malloc, i.e. we cannot do the following:
+int a = 10;
+free(&a); //this will give error.
+
+When we free a ptr with free(ptr), the mallocated space(pun intended) will go back to heap to be available for malloc 
+again, BUT!!!!! the ptr will still point to that memory and can access(read AND write) it.
+Hence! There is risk involved here, since the os might allocate this memory(which is free now) to some other process
+and our stored data will be lost.
+
+You can even access addresses like this:
+int a = 10;
+int *p = &a;
+*(p+1) = 9;
+*(p+2) = 6;
+This is also valid syntacically but the data may be lost as mentioned above.
+
+******************************************************
+SOOOOOOOOOO,
+To free memory practically, we should do:
+free(ptr);
+ptr = NULL; //So the ptr will not be able to access that freed memory anymore!
+*****************************************************

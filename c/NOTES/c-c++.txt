@@ -1,0 +1,11 @@
+scanf is exactly same as cin---------EXCEPT for char!!!!!!!
+
+1) scanf always reads from next line just like cin
+2) scanf only reads till whitespaces or \n just like cin
+
+#### Only difference is that cin reads char also from next line while
+#### scanf reads from same line!!!!!
+****** To overcome this we may use scanf twice or scanf(" %c",&c); --NOTICE THE SPACE--
+
+****** Even when inputting string like scanf(" %[^\n]%*c",s) we need to use space, otherwise 
+things will not work, since this pattern reads string char by char**********************
